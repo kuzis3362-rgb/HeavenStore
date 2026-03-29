@@ -53,3 +53,63 @@ body { background-color: var(--cream); color: var(--text); }
 .input-field-auth label { display: block; font-size: 11px; font-weight: 900; margin-bottom: 8px; color: #888; }
 .input-field-auth input { width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 10px; outline: none; }
 .btn-auth { width: 100%; background: var(--primary-green); color: white; border: none; padding: 18px; border-radius: 10px; font-weight: 800; cursor: pointer; }
+
+/* MOBIL CIHAZLAR İÇİN DÜZENLEMELER (Max 768px) */
+@media (max-width: 768px) {
+    /* Navbar Düzeni */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+        width: 100%;
+        order: 3; /* Arama çubuğunu en alta al */
+    }
+
+    .nav-icons {
+        width: 100%;
+        justify-content: space-between;
+        order: 2;
+    }
+
+    .categories {
+        overflow-x: auto; /* Kategoriler yana kaysın (Trendyol gibi) */
+        justify-content: flex-start;
+        padding: 10px 5%;
+        white-space: nowrap;
+        gap: 20px;
+    }
+
+    /* Ürün Izgarası */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* Yan yana 2 ürün (Mobil Standartı) */
+        gap: 15px;
+        padding: 20px 3%;
+    }
+
+    .img-container {
+        height: 200px; /* Mobilde resimler biraz daha küçük */
+    }
+
+    .product-name {
+        font-size: 13px;
+        height: 32px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    /* Sepet ve Ödeme Sayfaları */
+    .cart-wrapper {
+        grid-template-columns: 1fr; /* Alt alta dizilme */
+    }
+
+    .auth-modal-pencere {
+        width: 90%; /* Mobilde giriş penceresi ekranı kaplasın */
+        padding: 30px 20px;
+    }
+}
