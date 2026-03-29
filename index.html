@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heaven Store | Doğanın Modası</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-container">
+        <div class="top-bar">HEAVEN STORE: DOĞAL DOKULAR, ZAMANSIZ TASARIMLAR</div>
+        
+        <nav class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">HEAVEN<span>STORE</span></div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Ürün, kategori veya marka ara...">
+            </div>
+
+            <div class="nav-icons">
+                <a href="javascript:void(0)" id="userBtn" onclick="authModalAc()">Giriş Yap</a>
+                <a href="#">Favorilerim</a>
+                <a href="sepet.html" class="cart-link">Sepetim <span id="sayac">0</span></a>
+            </div>
+        </nav>
+
+        <div class="categories">
+            <a href="#">Yeni Gelenler</a>
+            <a href="#">Kadın</a>
+            <a href="#">Erkek</a>
+            <a href="#">Aksesuar</a>
+            <a href="#">Sürdürülebilir Koleksiyon</a>
+        </div>
+    </header>
+
+    <main class="products-grid">
+        <div class="urun-karti">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500" id="img-1">
+            </div>
+            <div class="info">
+                <div class="brand-name">HEAVEN ARCHIVE</div>
+                <div class="product-name" id="bas-1">Keten Karışımlı Sage Gömlek</div>
+                <div class="price">1.249 TL</div>
+                <button class="btn-add" onclick="sepeteEkle('Sage Gömlek', 1249, 1, 'M')">Sepete Ekle</button>
+            </div>
+        </div>
+
+        <div class="urun-karti">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500" id="img-2">
+            </div>
+            <div class="info">
+                <div class="brand-name">HEAVEN ARCHIVE</div>
+                <div class="product-name" id="bas-2">Oversize Krem Kanvas Pantolon</div>
+                <div class="price">1.850 TL</div>
+                <button class="btn-add" onclick="sepeteEkle('Krem Pantolon', 1850, 1, '42')">Sepete Ekle</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="authModal" class="auth-modal-maske" onclick="authModalKapat()">
+        <div class="auth-modal-pencere" onclick="event.stopPropagation()">
+            <div class="auth-tabs">
+                <button id="tabGiris" class="active" onclick="tabDegistir('giris')">Giriş Yap</button>
+                <button id="tabKayit" onclick="tabDegistir('kayit')">Üye Ol</button>
+            </div>
+
+            <div id="formGiris" class="auth-form active">
+                <div class="input-field-auth">
+                    <label>E-POSTA</label>
+                    <input type="email" id="loginEmail" placeholder="ornek@mail.com">
+                </div>
+                <div class="input-field-auth">
+                    <label>ŞİFRE</label>
+                    <input type="password" id="loginPass" placeholder="••••••••">
+                </div>
+                <button class="btn-auth" onclick="girisYap()">Giriş Yap</button>
+            </div>
+
+            <div id="formKayit" class="auth-form">
+                <div class="input-field-auth">
+                    <label>AD SOYAD</label>
+                    <input type="text" id="regName" placeholder="Ad Soyad">
+                </div>
+                <div class="input-field-auth">
+                    <label>E-POSTA</label>
+                    <input type="email" id="regEmail" placeholder="ornek@mail.com">
+                </div>
+                <div class="input-field-auth">
+                    <label>ŞİFRE</label>
+                    <input type="password" id="regPass" placeholder="En az 6 karakter">
+                </div>
+                <button class="btn-auth" onclick="kayitOl()">Üye Ol</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
